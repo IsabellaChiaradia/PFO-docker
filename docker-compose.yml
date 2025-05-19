@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql-pfo
+    environment:
+      MYSQL_ROOT_PASSWORD: 4240045
+      MYSQL_DATABASE: mi_base
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: node-pfo-app
+    depends_on:
+      - db
+    ports:
+      - "3001:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: 4240045
+      DB_NAME: mi_base
+
+volumes:
+  dbdata:

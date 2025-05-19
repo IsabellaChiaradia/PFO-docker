@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+
+# dotenv
+.env
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+
+# Producción o temporales
+dist/
+build/
+tmp/
+temp/
+
+# Otros
+*.bak
+*.swp
